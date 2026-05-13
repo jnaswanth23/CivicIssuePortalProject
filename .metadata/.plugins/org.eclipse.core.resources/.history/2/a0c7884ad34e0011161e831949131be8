@@ -1,0 +1,46 @@
+package com.backend.civicissueportal.controller;
+
+import com.backend.civicissueportal.model.Issue;
+import com.backend.civicissueportal.repository.IssueRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
+
+@RestController
+@RequestMapping("/api/admin")
+@CrossOrigin("*")
+public class AdminController {
+
+    @Autowired
+    private IssueRepository repo;
+
+    // Get all issues for admin dashboard
+    @GetMapping("/issues")
+    public List<Issue> getAllIssues() {
+        return repo.findAll();
+    }
+
+    // Update issue status
+    @PutMapping("/status/{id}")
+    public Issue updateStatus(@PathVariable Long id,
+                              @RequestBody Map<String,String> body) {
+
+        Issue issue = repo.findById(id).orElseThrow();
+
+        String status = body.get("status");
+        String remark = body.get("remark");
+
+        issue.setStatus(status);
+
+        // If admin selects NotSolved, save remark
+        if("NotSolved".equals(status)) {
+            issue.setAdminRemark(remark);
+        } else {
+            issue.setAdminRemark(null);
+        }
+
+        return repo.save(issue);
+    }
+}

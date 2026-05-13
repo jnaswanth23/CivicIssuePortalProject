@@ -1,0 +1,7 @@
+package com.backend.civicissueportal.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.backend.civicissueportal.model.Issue;
+
+public interface IssueRepository extends JpaRepository<Issue, Long> {
+}

@@ -1,0 +1,5 @@
+package com.backend.civicissueportal.repository;
+
+public class IssueRepository {
+
+}

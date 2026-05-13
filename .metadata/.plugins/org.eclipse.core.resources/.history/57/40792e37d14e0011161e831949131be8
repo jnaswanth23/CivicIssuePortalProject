@@ -1,0 +1,70 @@
+package com.backend.civicissueportal.controller;
+
+import com.backend.civicissueportal.model.Issue;
+import com.backend.civicissueportal.repository.IssueRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/api/issues")
+@CrossOrigin("*")
+public class IssueController {
+
+    @Autowired
+    private IssueRepository repo;
+
+    @PostMapping("/submit")
+    public String submitIssue(
+            @RequestParam String title,
+            @RequestParam String category,
+            @RequestParam String description,
+            @RequestParam(required = false) String address,
+            @RequestParam(required = false) Double latitude,
+            @RequestParam(required = false) Double longitude,
+            @RequestParam MultipartFile image
+    ) throws IOException {
+
+        System.out.println("API HIT");
+
+        // ✅ FIXED PATH (VERY IMPORTANT)
+        String uploadDir = System.getProperty("user.dir") + "/uploads/";
+
+        // ✅ CREATE FOLDER IF NOT EXISTS
+        File dir = new File(uploadDir);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        // ✅ FILE NAME
+        String originalName = image.getOriginalFilename();
+        if (originalName == null || originalName.isEmpty()) {
+            throw new RuntimeException("Image file is missing");
+        }
+
+        String fileName = UUID.randomUUID() + "_" + originalName;
+
+        // ✅ SAVE FILE
+        File file = new File(uploadDir + fileName);
+        image.transferTo(file);
+
+        // ✅ SAVE DATA TO DB
+        Issue issue = new Issue();
+        issue.setTitle(title);
+        issue.setCategory(category);
+        issue.setDescription(description);
+        issue.setAddress(address);
+        issue.setLatitude(latitude);
+        issue.setLongitude(longitude);
+        issue.setImageUrl(fileName);
+
+        repo.save(issue);
+
+        return "Issue submitted successfully";
+    }
+}
