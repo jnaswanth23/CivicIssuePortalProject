@@ -1,0 +1,23 @@
+.adminIssuesContainer{
+  padding:30px;
+}
+
+.issuesTable{
+  width:100%;
+  border-collapse: collapse;
+}
+
+.issuesTable th,
+.issuesTable td{
+  border:1px solid #ddd;
+  padding:10px;
+}
+
+.issuesTable th{
+  background:#1f2a44;
+  color:white;
+}
+
+.issuesTable img{
+  border-radius:6px;
+}

@@ -1,0 +1,173 @@
+:root{
+  --bg1:#070A12;
+  --bg2:#0E1630;
+
+  --text:#EAF0FF;
+  --muted:rgba(234,240,255,.72);
+
+  --glass:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.15);
+
+  --accent1:#6AA7FF;
+  --accent2:#7C5CFF;
+}
+
+/* Page background */
+.login-page{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 28px 16px;
+
+  background:
+    radial-gradient(60% 60% at 18% 22%, rgba(106,167,255,.18), transparent 60%),
+    radial-gradient(70% 70% at 82% 78%, rgba(124,92,255,.18), transparent 60%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+/* Glass card */
+.login-card{
+  width: 420px;
+  max-width: 100%;
+  padding: 28px 26px;
+
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+
+/* Title */
+.login-title{
+  margin: 0 0 18px 0;
+  text-align:center;
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* Form labels */
+.login-card label{
+  display:block;
+  margin: 10px 0 6px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Inputs */
+.login-input{
+  width:100%;
+  padding: 12px 14px;
+
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px;
+
+  color: var(--text);
+  outline: none;
+
+  transition: border-color .15s ease, transform .1s ease;
+}
+
+.login-input::placeholder{
+  color: rgba(234,240,255,.55);
+}
+
+.login-input:focus{
+  border-color: rgba(106,167,255,.7);
+}
+
+/* Password + eye */
+.password-box{
+  position: relative;
+}
+
+.eye-icon{
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(234,240,255,.65);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.eye-icon:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+/* Forgot password link */
+.password-box a{
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(106,167,255,.95);
+  text-decoration: none;
+}
+
+.password-box a:hover{
+  text-decoration: underline;
+}
+
+/* Button */
+.login-btn{
+  width:100%;
+  margin-top: 16px;
+  padding: 12px 14px;
+
+  border: 0;
+  border-radius: 14px;
+
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  box-shadow: 0 14px 30px rgba(106,167,255,.18);
+
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.login-btn:hover{
+  transform: translateY(-1px);
+  opacity: .95;
+}
+
+/* Footer */
+.login-footer{
+  margin-top: 16px;
+  text-align:center;
+  color: rgba(234,240,255,.70);
+  font-size: 14px;
+}
+
+.login-footer a{
+  color: rgba(106,167,255,.95);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-footer a:hover{
+  text-decoration: underline;
+}
+/* Shared background used by Home & Login */
+.shared-bg {
+  min-height: 100vh;
+  background: radial-gradient(
+      1200px circle at 20% 10%,
+      rgba(59, 130, 246, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      1200px circle at 80% 30%,
+      rgba(34, 197, 94, 0.12),
+      transparent 40%
+    ),
+    #f8fafc;
+}

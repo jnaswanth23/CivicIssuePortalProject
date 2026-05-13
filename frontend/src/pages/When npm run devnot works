@@ -1,0 +1,41 @@
+Press Win + R → type:
+
+sysdm.cpl
+
+
+Go to Advanced → Environment Variables
+
+Under User variables for jnasw (recommended), select Path → Edit → New and add:
+
+C:\Program Files\nodejs\
+C:\Users\jnasw\AppData\Roaming\npm
+
+
+(If Path is not there in User variables, add them under System variables → Path instead.)
+
+Click OK on everything.
+
+Close all terminals (PowerShell/VS Code) and reopen PowerShell.
+
+Verify:
+
+npm -v
+node -v
+
+
+Then:
+
+npm run dev
+
+Why it worked yesterday but not today
+
+Most likely PATH got modified/reset (Windows update, reinstall/uninstall of Node, or some software overwrote PATH). Your manual $env:Path += ... worked because it temporarily fixes PATH only for that terminal session.
+
+One quick thing about your last command
+
+In PowerShell, where might not run the way you expect (it can be an alias). Use this instead:
+
+where.exe node
+where.exe npm
+//If database not works add this into application.properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/<DB_NAME>?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC

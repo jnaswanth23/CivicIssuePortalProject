@@ -1,0 +1,257 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a; /* navy */
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ✅ Login and Signup SAME FORMAT */
+.nav-btn {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.nav-btn:hover {
+  background: #eef2f7;
+}
+
+/* ✅ Signup as primary teal */
+.nav-btn.primary {
+  background: #0ea5a4;
+  border-color: #0ea5a4;
+  color: #ffffff;
+}
+
+.nav-btn.primary:hover {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Ashoka Chakra icon */
+.chakra-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* Text stays clean */
+.logo-text {
+  white-space: nowrap;
+}
+.navbar-logo{
+  display:flex;
+  align-items:center;
+}
+
+.civic-logo{
+  height: 44px;
+  width: auto;
+  display:block;
+}
+.navbar {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo area */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Badge image (round pin style) */
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover; /* keeps badge circular */
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Title */
+.logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0f172a;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+}
+
+.nav-btn.primary {
+  border: none;
+  background: #0d9488;
+  color: #fff;
+}
+/* Navbar container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO SECTION */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  /* 🔹 Move logo + text to the left */
+  margin-left: -12px;
+}
+
+/* LOGO IMAGE (MAKE BIGGER) */
+.logo-img {
+  width: 52px;        /* 🔹 increased from ~44px */
+  height: 52px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* LOGO TEXT */
+.logo-text {
+  font-size: 22px;    /* 🔹 slightly bigger */
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+}
+.navbar-left {
+  margin-left: -100px; /* try -16px / -20px */
+}
+.navbar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+}
+
+/* RIGHT */
+.navbar-right {
+  display: flex;
+  gap: 24px;
+}
+
+/* SIMPLE NAV TEXT */
+.nav-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Optional hover (still black theme) */
+.nav-text:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .navbar-right {
+    gap: 16px;
+  }
+}

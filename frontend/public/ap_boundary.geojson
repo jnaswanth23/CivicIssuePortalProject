@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Test AP" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.7, 12.6],
+            [84.9, 12.6],
+            [84.9, 19.3],
+            [76.7, 19.3],
+            [76.7, 12.6]
+          ]
+        ]
+      }
+    }
+  ]
+}
